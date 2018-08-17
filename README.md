@@ -8,10 +8,14 @@ This utility was created for Golang learning purposes and was inspired by https:
 
 Some of my changes to fix a few bugs in the original implementation. The default isUdp and to add specific interface addresses to listen to.
 
+## To build for arm
+Set the GOPATH to the source directory and:
+env GOOS=linux GOARCH=arm GOARM=5 go build
+
 ### Usage:
 
 ```
-go-nc [-lu] [-p source port ] [-s source ip address ] [hostname ] [port[s]]
+go-nc [-ilu] [-p source port ] [-s source ip address ] [hostname ] [port[s]]
 ```
 
 ### Description:
@@ -19,6 +23,9 @@ go-nc [-lu] [-p source port ] [-s source ip address ] [hostname ] [port[s]]
 The utility allows to listen UDP\TCP ports and send data to remote ports over TCP\UDP. Main usage scenario is testing network protocols and accessibility of the open ports.
 
 The options are as follows:
+
+**-i**
+	Specifies the address to bind to while listening
 
 **-l** 
 	Used to specify that go-nc should listen for an incoming connection rather than initiate a connection to a remote host.
